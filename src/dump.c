@@ -21,7 +21,7 @@ int mycore_dump_main(int argc, char *argv[]) {
     for (int i = 2; i < argc; i++) {
         char* error = NULL;
         int num = strtol(argv[i], &error, 10);
-        if (error == argv[i]) {
+        if (*error != '\0') {
             fprintf(stderr, "Invalid Number\n");
             continue;
         }
