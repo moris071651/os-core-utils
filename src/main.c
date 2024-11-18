@@ -4,6 +4,7 @@
 
 #include "cat.h"
 #include "ls.h"
+#include "dump.h"
 
 int main(int argc, char *argv[]) {
     if (argc < 2) {
@@ -16,6 +17,9 @@ int main(int argc, char *argv[]) {
     }
     else if (strcmp(argv[1], "ls") == 0) {
         return mycore_ls_main(argc - 1, argv + 1);
+    }
+    else if (strcmp(argv[1], "dump") == 0) {
+        return mycore_dump_main(argc - 1, argv + 1);
     }
     else {
         fprintf(stderr, "Unknown command: %s\n", argv[1]);
